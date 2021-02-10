@@ -1,0 +1,27 @@
+// 色ーーーーーーーーーーーーーーーーーーーーーー
+$color-main: #58A9EF;
+$color-font: #555555;
+
+// フォントーーーーーーーーーーーーーーーーーーーーーー
+$font-ja: Arial;
+
+// 幅ーーーーーーーーーーーーーーーーーーーーーー
+// キャンバス幅
+$width-canvas:1366px;
+// インナー
+$width-inner: 1000px;
+
+
+// ブレイクポイントーーーーーーーーーーーーーーーーーーーーーー
+$breakpoints: (
+	"sp": "(max-width: 767px)",
+	"tab-only": "(min-width: 768px) and (max-width: #{$width-inner - 1px})",
+	"tab": "(max-width: #{$width-inner - 1px})",
+	"pc": "(min-width: #{$width-inner})",
+);
+// メディアクエリー
+@mixin mq($breakpoint) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
