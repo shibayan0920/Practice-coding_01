@@ -34,6 +34,10 @@ a{
   height: 80px;
   background-color: $color-main;
   color: #fff;
+
+  @include mq(sp){
+    height: 110px;
+  }
   
   .inner{
     padding: 0 20px;
@@ -43,18 +47,35 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mq(tab){
+      width: 100%;
+    }
+    @include mq(sp){
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   .site-logo{
     font-size: 2.8rem;
     color: #fff;
+
+    @include mq(sp){
+      margin-bottom: 20px;
+    }
   }
 
   &-nav{
     ul{
       display: flex;
+
       li{
-        margin-left: 20px;
+        margin-left: 40px;
+
+        @include mq(sp){
+          margin: 5px 15px 0;
+        }
         a{
           color: #fff;
           font-size: 2rem;
@@ -73,6 +94,10 @@ a{
   .mv{
     height: 603px;
     background: url(../img/mv@2x.png)no-repeat center center /cover;
+
+    @include mq(sp){
+      height: 450px;
+    }
   }
 }
 
@@ -85,30 +110,62 @@ a{
     width: $width-inner;
     margin: auto;
     padding: 40px 40px 90px 20px;
-  }
 
+    @include mq(tab){
+      width: 100%;
+    }
+    @include mq(sp){
+      padding: 60px 20px 20px;
+    }
+  }
+  
   &-ttl{
     font-size: 3.2rem;
     text-align: center;
     margin-bottom: 42px;
     font-weight: bold;
     
+    @include mq(sp){
+      margin-bottom: 20px;
+    }
   }
 
   .container{
     display: flex;
     justify-content: space-between;
-
+    
+    @include mq(sp){
+      flex-direction: column;
+    }
   }
   &-img{
-    width: 480px;
+    width: 48%;
+
+    @include mq(sp){
+      width: 100%;
+    }
   }
   &-desc{
+    width: 42%;
+
+    & br{
+      display: none;
+    }
+
+    @include mq(sp){
+      width: 100%;
+    }
     &__ttl{
       font-size: 3.2rem;
       font-weight: bold;
       line-height: 1.2;
       margin-bottom: 30px;
+
+      @include mq(sp){
+        font-size: 2.5rem;
+        margin-top: 30px;
+        text-align: center;
+      }  
     }
 
     &__txt{
@@ -117,6 +174,11 @@ a{
 
     &__btn{
       margin-top: 30px;
+      
+      @include mq(sp){
+        width: 100%;
+        margin: 50px auto;
+      }
       .read-more{
         display: inline-block;
         padding: 1.5rem 5rem;
